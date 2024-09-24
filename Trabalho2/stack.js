@@ -173,7 +173,8 @@ function setup()
 
 		gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 		
-		gl.clearColor(0.8705883, 0.3647059, 0.5137255, 1.0);
+		// gl.clearColor(0.8705883, 0.3647059, 0.5137255, 1.0);
+		gl.clearColor(0.913725, 0.894117, 0.921568, 1.0);
 		
 		gl.enable(gl.BLEND);
 		gl.enable(gl.CULL_FACE);
@@ -207,12 +208,12 @@ function reset()
 		stackPos: stackPos
 	});
 
-	stack.push({
-		translation: [0.0, 1.50,  -3.0],
-		scaling: [1.0, 1.0, 1.0],
-		rotation: [0.0, 0.0, 0.0],
-		stackPos: stackPos
-	});
+	// stack.push({
+	// 	translation: [0.0, 1.50,  -3.0],
+	// 	scaling: [1.0, 1.0, 1.0],
+	// 	rotation: [0.0, 0.0, 0.0],
+	// 	stackPos: stackPos
+	// });
 
 	currentDir = "z";
 	angle = 0.0;
@@ -318,9 +319,9 @@ function addLayer(info)
 function resetCam() 
 {
 	// camPos = [7.0, 6.0, 8.0];
-	camPos = [0.0, 20.0, -20.0];
+	camPos = [0.0, 6.0, -8.0];
 	// camLookAt = [0.0, 2.0, 0.0];
-	camLookAt = [0.0, 0.0, -1.0];
+	camLookAt = [0.0, 0.0, 1.0];
 	camUp = [camPos[0], camPos[1] + 1, camPos[2]];
 
 	configCam();
@@ -513,11 +514,13 @@ function updateLighting()
 
 function drawBoxes()
 {
-	for (var i = 0; i < stack.length; i++) 
-	{
-		draw3DObject(boxGeometry, stack[i], false);
+	// for (var i = 0; i < stack.length; i++) 
+	// {
+	// 	draw3DObject(boxGeometry, stack[i], false);
 
-	}
+	// }
+	draw3DObject(boxGeometry, stack[0], false);
+
 }
 
 function drawScoreCube()
@@ -540,7 +543,7 @@ function loop()
 {
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-	moveTopLayer();
+	// moveTopLayer();
 	
 	updateLighting();
 
