@@ -1,0 +1,19 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #515151;
+  }
+  #canvas-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #score {
+    position: absolute;
+    top: -0.5%;
+    left: 94.5%;
+    font-family: "Roboto", sans-serif;
+  }
